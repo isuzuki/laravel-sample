@@ -6,3 +6,13 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+
+
+### vim.gitignore
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
