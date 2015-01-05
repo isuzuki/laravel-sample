@@ -11,7 +11,18 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('ArtistTableSeeder');
 	}
 
+}
+
+class ArtistTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('artist')->delete();
+
+		Artist::create(['name' => 'foo']);
+		Artist::create(['name' => 'bar']);
+	}
 }
