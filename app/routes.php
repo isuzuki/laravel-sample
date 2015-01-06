@@ -11,7 +11,15 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', ['uses' => 'HomeController@getIndex']);
+
+Route::group(['prefix' => 'api/artists'], function()
 {
-	return View::make('hello');
+	Route::pattern('id', '[0-9]+');
+
+	Route::get('/', ['uses' => 'ArtistController@getIndex']);
+	Route::get('/{id}', ['uses' => 'ArtistController@getId']);
+	Route::post('/', ['uses' => 'ArtistController@postRegister']);
+	Route::put('/{id}', ['uses' => 'ArtistController@putId']);
+	Route::delete('/{id}', ['uses' => 'ArtistController@deleteId']);
 });
