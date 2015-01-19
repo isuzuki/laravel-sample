@@ -19,6 +19,7 @@ Route::group(['prefix' => 'api/artists'], function()
 
 	Route::get('/', ['uses' => 'ArtistController@getIndex']);
 	Route::get('/{id}', ['uses' => 'ArtistController@getId']);
+	Route::get('/{id}/discographies', ['uses' => 'ArtistController@getDiscographies']);
 	Route::post('/', ['uses' => 'ArtistController@postRegister']);
 	Route::put('/{id}', ['uses' => 'ArtistController@putId']);
 	Route::delete('/{id}', ['uses' => 'ArtistController@deleteId']);

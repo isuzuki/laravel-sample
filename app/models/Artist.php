@@ -8,4 +8,9 @@ class Artist extends Eloquent {
 
 	protected $table = 'artist';
 
+	public function discographies()
+	{
+		return $this->hasMany('Discography');
+	}
+
 }

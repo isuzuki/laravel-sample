@@ -68,4 +68,18 @@ class ArtistController extends BaseController {
 
 		return Response::json([], 204);
 	}
+
+	public function getDiscographies($id)
+	{
+		$artist = Artist::where('id', $id)->first();
+		if (is_null($artist))
+		{
+			return Response::json([
+				'message' => 'Not Found'
+			], 404);
+		}
+
+		return Response::json($artist->discographies);
+
+	}
 }
